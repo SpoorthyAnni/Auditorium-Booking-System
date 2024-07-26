@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>SEAT BOOKING</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="contact.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">   
+</head>
+<body>
+<section class="header">
+<nav>
+    <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+    <div class="nav-links">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#offer">SERVICES</a></li>
+            <li><a href="#ab">ABOUT</a></li>
+            <li><a href="#cta">CONTACT US</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="text-box">
+    <h1>BOOK NOW</h1>
+    <a a href="http://localhost/project/login.php" target="_blank" class="visit">CLICK HERE TO BOOK THE SEATS</a>
+    <a a href="seminar.html" target="_blank" class="visit">CLICK HERE TO BOOK A HALL</a>
+</div>
+</section>
+<section class="offer" id="offer">
+      <h1>What services do we provide?</h1>
+      <div class="row">
+        <div class="col">
+            <h3>BOOKING</h3>
+            <p>
+                Seats in the front row or the back row can be booked as per ones choice.
+            </p>
+        </div>
+        <div class="col">
+            <h3>CANCELLATION</h3>
+            <p>
+                The seats can be cancelled if not required.
+            </p>
+        </div>
+        <div class="col">
+            <h3>RESET</h3>
+            <p>
+                The seats can be reset to original state if required.
+            </p>
+        </div>
+      </div>
+</section>
+<section class="ab" id="ab">
+    <h1>ABOUT US</h1>
+    <p>
+        <br>Using our seat booking software students and staff can easily reserve their desired seats that match their needs and comfort level. When colleges are equipped with the latest innovations like the Seat Booking Software, the management becomes easy. The software effortlessly creates a flexible environment within the organisation for the staff and students. Currently, the Web applications in our daily life are blooming, and there is also a growing trend in the applications of online booking which helps in reducing manual work.
+        In this technological world we face many difficulties while reserving halls. The current booking system is manual as all the work is done and kept in files and it also proven to be time and energy consuming. It is  difficult for both student and staff. To resolve such issues, we have developed online booking system which is  a combination of the new technologies. In this website, the user can reserve and cancel their seats. Using this website, the user can save their time and they can easily book a seat  according to their requirement.        
+    </p>
+</section>
+<section class="cta" id="cta">
+  <h1>CONTACT US</h1>
+  <div class="container">
+    <form id="my-form">
+  
+        <div class="form-group">
+          <label for="Name"> Name</label>
+          <input type="text" id="Name" name="Name">
+        </div>
+
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+ 
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject">
+          </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="7"></textarea>
+        </div>
+  
+        <button type="submit" onclick="sendemail()">Submit</button>
+      </form>
+  </div>
+  <div id="status"></div>
+</section>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendemail(){
+
+    let Name=document.getElementById("Name").value;
+    let email=document.getElementById("email").value;
+    let subject=document.getElementById("subject").value;
+    let message=document.getElementById("message").value;
+    let body= "Name: "+Name+"</br>Email: "+email+"</br>Subject: "+subject+"</br>Message: "+message;
+
+
+    Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "spoorthyanni@gmail.com",
+    Password : "1234",
+    To : 'spoorthyanni@gmail.com',
+    From : "21cse100@bnmit.in",
+    Subject : subject,
+    Body : body
+}).then(
+  message => alert(message)
+);
+    }
+  </script>
+</body>
+</html>
